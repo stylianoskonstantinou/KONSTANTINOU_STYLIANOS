@@ -1,0 +1,238 @@
+/* =====================================================
+   ΒΑΣΙΚΕΣ ΡΥΘΜΙΣΕΙΣ
+   - Εφαρμογή box-sizing
+   - Ορισμός βασικής γραμματοσειράς και στυλ σώματος
+===================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0 25px;
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   HEADER (Επικεφαλίδα)
+   - Περιλαμβάνει τον τίτλο και το μενού πλοήγησης
+===================================================== */
+#main-header {
+    background-color: #004d99;
+    color: white;
+    padding: 30px 15px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#main-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 2.8rem;
+    margin: 0 0 15px 0;
+}
+
+/* =====================================================
+   ΠΛΟΗΓΗΣΗ (Navigation Menu)
+===================================================== */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 18px;
+}
+
+/* Σύνδεσμοι στο μενού */
+nav ul li a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.15rem;
+    transition: color 0.3s ease;
+}
+
+/* Ψευδοκλάσεις hover & focus για καλύτερη εμπειρία χρήστη */
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #ffd600;
+    outline: none;
+}
+
+/* =====================================================
+   ΕΝΟΤΗΤΕΣ (Sections)
+===================================================== */
+section {
+    margin-bottom: 50px;
+}
+
+/* Τίτλοι ενοτήτων */
+section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #003d99;
+    border-bottom: 3px solid #0057b7;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* Ψευδοστοιχείο ::after για διακοσμητικό βελάκι */
+section h2::after {
+    content: "▸";
+    position: absolute;
+    right: -25px;
+    top: 0;
+    font-size: 1.7rem;
+    color: #0057b7;
+    font-weight: 900;
+}
+
+/* =====================================================
+   ΕΝΟΤΗΤΑ ΠΡΟΦΙΛ
+   - Εικόνα και σύντομο κείμενο προφίλ
+===================================================== */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Εικόνα προφίλ */
+.profile-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 12px;
+    border: 4px solid #0057b7;
+    object-fit: cover;
+}
+
+/* Κείμενο προφίλ */
+.profile-text {
+    flex: 1;
+    font-size: 1.15rem;
+}
+
+/* =====================================================
+   ΛΙΣΤΕΣ
+===================================================== */
+ul {
+    padding-left: 45px;
+    list-style-type: square;
+    color: #2c3e50;
+}
+
+ul li {
+    margin-bottom: 14px;
+    font-size: 1.1rem;
+}
+
+/* =====================================================
+   ΥΠΟΣΗΜΕΙΩΣΕΙΣ (small)
+===================================================== */
+small {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    font-style: italic;
+    color: #555d66;
+    font-size: 1.1rem;
+    border-left: 4px solid #0057b7;
+}
+
+/* =====================================================
+   ΣΥΝΔΕΣΜΟΙ (Links)
+===================================================== */
+a {
+    color: #0057b7;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Εφέ hover/focus στους συνδέσμους */
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+/* Επιλογέας ιδιότητας:
+   Διαφορετικό στυλ για links που ανοίγουν σε νέα καρτέλα */
+a[target="_blank"] {
+    font-style: italic;
+    color: #0077cc;
+}
+
+/* =====================================================
+   ΥΠΟΣΕΛΙΔΟ (Footer)
+===================================================== */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #222831;
+    color: #eeeeee;
+    font-size: 1rem;
+    margin-top: 70px;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN (Για κινητές συσκευές)
+===================================================== */
+@media (max-width: 700px) {
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 130px;
+        height: 130px;
+        border-width: 3px;
+        margin-bottom: 20px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 12px 0;
+    }
+}
+
+/* =====================================================
+   Εικονίδια επικοινωνίας (Contact Icons)
+===================================================== */
+.icon {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 8px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Εφέ hover στα εικονίδια */
+.icon:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+
+/* =====================================================
+   Project descriptions - μικρά, ευανάγνωστα κείμενα κάτω από κάθε project
+===================================================== */
+#projects ul li p {
+    font-size: 0.95rem;      
+    color: #555;             
+    margin: 5px 0 15px 0;    
+    line-height: 1.4;        
+}
+
+
